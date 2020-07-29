@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BestDeal</title>
+
+<link rel="stylesheet" href="styles/styles.css" type="text/css" />
+<link rel="stylesheet" href="styles/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="styles/datatables.min.css"/>
+<link rel="stylesheet" href="styles/mystyle.css" type="text/css" />
+<script src="scripts/jquery.min.js"></script>
+<style>
+.search-box {
+	background-color: #f8f9f1 !important;
+	padding: 10px;
+}
+</style>
+</head>
+
+
+<body onload="init()">
+	<script
+		type="text/javascript"
+		src="scripts/autocomplete.js"></script>
+	<!-- Image and text -->
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+		<a class="navbar-brand mb-0 h3" href="/AS4/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BestDeal</a>
+		<div class="container">
+			<button class="navbar-toggler" 
+			type="button"
+			data-toggle="collapse"
+			data-target="#navbarNavAltMarkup"
+			aria-controls="navbarNavAltMarkup"
+			aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div 
+				class="collapse navbar-collapse"id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link active" href="/AS4/">Home </a>
+					<a class="nav-item nav-link active" href="/AS4/ProductDisplayServlet?type=TV">TV</a>
+					<a class="nav-item nav-link active" href="/AS4/ProductDisplayServlet?type=SoundSystems">Sound Systems</a>	
+					<a class="nav-item nav-link active" href="/AS4/ProductDisplayServlet?type=Phones">Phones</a>
+					<a class="nav-item nav-link active" href="/AS4/ProductDisplayServlet?type=Laptops">Laptops</a>
+					<a class="nav-item nav-link active" href="/AS4/ProductDisplayServlet?type=VoiceAssistant">Voice Assistant</a>
+					<a class="nav-item nav-link active" href="/AS4/ProductDisplayServlet?type=FitnessWatches">Fitness Watches</a>
+					<a class="nav-item nav-link active" href="/AS4/ProductDisplayServlet?type=SmartWatches">Smart Watches</a>
+					<a class="nav-item nav-link active" href="/AS4/ProductDisplayServlet?type=Headphones">Headphones</a>
+					<a class="nav-item nav-link active" href="/AS4/ProductDisplayServlet?type=WirelessPlan">Wireless Plan</a>
+				</div>
+			</div>
+		</div>	
+		
+		<a href="/AS4/TracDisplayServlet" class="nav-item nav-link active">Cart</a>
+
+		<span class="nav-greeting-dark">Hi There! Welcome.</span>
+		
+		<a class='btn btn-outline-dark my-2 my-sm-2 pull-right' href='/AS4/LoginServlet'
+			role='button'>Sign in</a>
+
+	</nav>
+	<div class="search-box">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 no-padding">
+				<input
+					type="text"
+					id="searchId"
+					placeholder="Search product i.e. Apple Watch"
+					onkeyup="doCompletion()"
+					class="search-input">
+				<div id="auto-row">
+					<table
+						id="complete-table"
+						class="gridtable"
+						style="position: absolute; width: 100%"></table>
+				</div>
+			</div>
+		</div>
+
+	</div>
